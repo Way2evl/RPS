@@ -1,2 +1,2 @@
 # RPS
-rock, paper, scissors
+repositroy to learn introductory python development
