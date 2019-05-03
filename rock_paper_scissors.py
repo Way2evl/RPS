@@ -3,10 +3,10 @@ from sys import exit
 
 RPS_LIST = ["rock", "paper", "scissors"]
 CHOICES_DICT = {"r": "rock", "p": "paper", "s": "scissors", "q": "quit"}
-USER_NAME = input("Type Players Name:")
+user_name = input("Please enter your name:")
 
 while True:
-    raw_user_choice = input("\n\n Hey " + USER_NAME + ", please choose r, p, or s:")
+    raw_user_choice = input("\n\n Hey " + user_name + ", please choose r, p, or s:")
 
     # let them quit
     if raw_user_choice == 'q':
@@ -23,22 +23,14 @@ while True:
     print('You chose "' + user_choice + '" and the computer chose "' + cpu_choice + '"')
 
     if user_choice == cpu_choice:
-        print('Tie!\n')
+        print('{} Ties!'.format(user_name))
 
-    elif user_choice == 'rock' and cpu_choice == 'scissors':
-        print('You Win!\n')
-
-    elif user_choice == 'rock' and cpu_choice == 'paper':
-        print('You Lose!\n')
-
-    elif user_choice == 'paper' and cpu_choice == 'rock':
-        print('You Win!\n')
-
-    elif user_choice == 'paper' and cpu_choice == 'scissors':
-        print('You Lose!\n')
-
-    elif user_choice == 'scissors' and cpu_choice == 'rock':
-        print('You Lose!\n')
-
-    elif user_choice == 'scissors' and cpu_choice == 'paper':
-        print('You Win!\n')
+    elif (user_choice == 'rock' and cpu_choice == 'scissors') or \
+    	(user_choice == 'paper' and cpu_choice == 'rock') or \
+    	(user_choice == 'scissors' and cpu_choice == 'paper'):
+        print('{} Wins!'.format(user_name))
+      
+    elif (user_choice == 'rock' and cpu_choice == 'paper') or \
+    	(user_choice == 'paper' and cpu_choice == 'scissors') or \
+    	(user_choice == 'scissors' and cpu_choice == 'rock'):
+      	print('{} Loses!'.format(user_name))
